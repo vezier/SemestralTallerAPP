@@ -12,6 +12,13 @@
 	<link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+	<style>
+  .demo-card-header-pic .card-header {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -43,11 +50,9 @@
                             </ul>
                         </div>
                     <div class="list-block inset">
-                        <ul>
-                            <li><a id="iniciar_sesion" class="item-link list-button color-green">Iniciar Sesión</a></li>
-                        </ul>
                         <div class="list-block-label">
-                              <p><a class="close-login-screen">Cerrar Ventana</a></p>
+								<p><a id="iniciar_sesion" class="item-link button">Iniciar Sesión</a></p>
+                              <p><a class="close-login-screen button">Cerrar Ventana</a></p>
                         </div>
                     </div>
                 </div>
@@ -57,13 +62,7 @@
     <div class="views">
       <!-- Your main view, should have "view-main" class-->
       <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <!-- We have home navbar without left link-->
-            <div class="center sliding">DirCheck</div>
-          </div>
-        </div>
+
 			<div class="pages navbar-fixed toolbar-fixed">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
@@ -88,55 +87,126 @@
                     </div>
 
                     <!-- Scrollable page content -->
-                    <div class="page-content">
-					<div class="logo"><center>
-							<img src="img/logotemp.png" width="120px" height="120px"/></center>
-						</div>
-                        <div class="content-block-title">
-						<form>
-						
+                    <div class="page-content" style="background-image:url(img/background.png); background-size: 100% 100%;background-repeat: no-repeat;">
+							<div class="logo"><center>
+								<img src="img/logotemp.png" width="120px" height="120px"/></center>
+							</div>						<form>
 						<div class="checker" align="center">
-                        <input type="text" id="url" placeholder="Ingresa URL / IP">
-                        <input type="text" id="puerto" size="5" placeholder=" Puerto">
-						</div>
-						<div class="list-block">
-						<ul><li><a id="iniciar" href="#" class="item-link list-button">Revisar </a></li></ul>
-						</div>
-                    </form>
-					<div class="content-block inset">
-					<div class="content-block-inner">
-						OUTPUT LOG, status en alerta
-					</div></div>
-						
-						
-						
-						
-						
-						</div><!-- Scrollable page content END -->
-                        <div class="list-block media-list inset">
-                          
-                        </div>     
+							<input type="text" id="url" placeholder="Ingresa URL / IP">
+							<input type="text" id="puerto" size="5" placeholder=" Puerto">
+							</div>
+							<div class="list-block">
+								<p><a href="#" class="button button-big button-fill color-gray">Check!</a></p>
+							</div>
+							<p><a href="#"  data-picker=".picker-1" class="button button-fill color-green open-picker">Ver Historial</a></p>
+							<!-- Scrollable page content END -->    
                     </div>
-
+					
+					 <div class="picker-modal picker-1">
+						<div class="toolbar">
+						  <div class="toolbar-inner">
+							<div class="left"></div>
+							<div class="right"><a href="#" class="close-picker">Cerrar</a></div>
+						  </div>
+						</div>
+						<div class="picker-modal-inner">
+						  <div class="page-content infinite-scroll">
+							<div class="data-table card">
+							  <table>
+								<thead>
+								  <tr>
+								    <div class="card-header">
+								    <div class="data-table-title">Historial</div>
+									</div>
+									<th class="label-cell">URL</th>
+									<th class="numeric-cell">Puerto</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td class="label-cell">Google.cl</td>
+									<td class="numeric-cell">80</td>
+								  </tr>	
+								  <tr>
+									<td class="label-cell">Google.com</td>
+									<td class="numeric-cell">80</td>
+								  </tr>
+								  <tr>
+									<td class="label-cell">Google.es</td>
+									<td class="numeric-cell">80</td>
+								  </tr>								  
+									<tr>
+									<td class="label-cell">Google.es</td>
+									<td class="numeric-cell">80</td>
+								  </tr>
+								</tbody>
+							  </table>
+							</div>
+						  </div>
+						</div>
+					  </div>
                     <div class="popup popup-tablamensajes">
-                        <div class="content-block-title">MensajesDev</div>
+							<div class="navbar">
+							  <div class="navbar-inner">
+								<!-- We have home navbar without left link-->
+								<div class="center sliding">Mensajes</div>
+							  </div>
+							</div>
+							<div class="content-block-title"></div>
+							<div class="page-content infinite-scroll">
+							<div class="card demo-card-header-pic">
+							  <div style="background-image:url(https://78.media.tumblr.com/34ba59627f8b2b2a6b8a7e1858d9291f/tumblr_owxwuryDPB1wsbn2ao1_540.jpg)" valign="bottom" class="card-header color-white no-border">Titulo Mensaje </div>
+							  <div class="card-content">
+								<div class="card-content-inner">
+								  <p class="color-gray">Posted on January 21, 2015</p>
+								  <p>CUERPOOOO</p>
+								</div>
+							  </div>
+							  <div class="card-footer">
+								<a>Posted BY: #User</a>
+							  </div>
+							</div>						
                         <!-- Inset content block -->
                         <div class="content-block inset">
                             <div class="content-block-inner">
-                                <p>No hay mensajes.</p>
-                                <p><a href="#" class="close-popup">Cerrar</a></p>
+                                <p><a href="#" class="close-popup button button-round active">Cerrar</a></p>
                             </div>
                         </div>
+						</div>
                     </div>
 					<div class="popup popup-userInfo">
-                        <div class="content-block-title">Detalles Cuenta</div>
-                        <!-- Inset content block -->
+							<div class="CONTENEDOR INFO">
+							<div class="navbar">
+							  <div class="navbar-inner">
+								<!-- We have home navbar without left link-->
+								<div class="center sliding">Detalles de la cuenta</div>
+							  </div>
+							</div>
+								<div class="list-block">
+								  <ul>
+									<li class="item-content">
+									  <div class="item-inner">
+										<div class="item-title">UserName:</div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-inner">
+										<div class="item-title">Correo:</div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-inner">
+										<div class="item-title">Consultas restantes:</div>
+									  </div>
+									</li>
+								  </ul>
+								</div>
+							  </div>
                         <div class="content-block inset">
                             <div class="content-block-inner">
-                                <p>No hay datos.</p>
-								</hr>
-								<p><a id="iniciar" class="open-login-screen && close-popup"><i class="f7-icons" style="font-size:14px;">social_rss</i> Iniciar Sesión</a></p>
-                                <p><a href="#" class="close-popup">Cerrar</a></p>
+								</br>
+								<p><a id="iniciar" class="open-login-screen button button-big button-round && close-popup"><i class="f7-icons" style="font-size:14px;">social_rss</i> Iniciar Sesión</a></p>
+                                <p><a href="#" class="close-popup button button-round active">Cerrar</a></p>
                             </div>
                         </div>
                     </div>
