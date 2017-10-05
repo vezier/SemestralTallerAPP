@@ -63,7 +63,7 @@
       <!-- Your main view, should have "view-main" class-->
       <div class="view view-main">
 
-			<div class="pages navbar-fixed toolbar-fixed">
+			<div class="pages toolbar-fixed">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Toolbar. In Material theme it should be inside of the page-->
@@ -86,17 +86,18 @@
                         </div>
                     </div><!-- Scrollable page content -->
                     <div class="page-content" style="background-image:url(img/background.png); background-size: 100% 100%;background-repeat: no-repeat;">
-							<div class="logo" align="center">
+							<div class="logo" align="center" style="margin-top:8px;margin-bottom:8px;">
 								<img src="img/logotemp.png" width="120px" height="120px"/>
-							</div></br>
+							</div>
 						<div class="checker" align="center">
 							<input type="text" id="url" placeholder="Ingresa una URL / IP">
 							<input type="tel" id="puerto" size="5" placeholder=" Puerto">
+							<p><a href="#" id="rev" style="margin-left:60px;margin:60px;margin-top:9px;" class="button button-big button-fill color-gray">Consultar</a></p>
 							</div>
 							<div class="list-block">
-								<p><a href="#" id="rev" class="button button-big button-fill color-gray">Check!</a></p>
+								
 							</div>
-							<p><a href="#"  data-picker=".picker-1" class="button button-fill color-green open-picker">Ver Historial</a></p>
+							
 							<!-- Scrollable page content END -->    
                     </div>
 					 <div class="picker-modal picker-1">
@@ -201,7 +202,7 @@
 							  </div>
                         <div class="content-block inset">
                             <div class="content-block-inner">
-								</br>
+								<p><a href="#"  data-picker=".picker-1" class="button button button-round open-picker">Ver Historial</a></p>
 								<p><a id="iniciar" class="open-login-screen button button-big button-round && close-popup"><i class="f7-icons" style="font-size:14px;">social_rss</i> Iniciar Sesión</a></p>
                                 <p><a href="#" class="close-popup button button-round active">Cerrar</a></p>
                             </div>
