@@ -16,11 +16,28 @@ $$(document).on('deviceready', initapp);
 function initapp(){
   console.log("dispositivo listo!!!");
   $$("#rev").on('click',revisa);
+  $$("#logoc").on('click',playAudio);
   }
-
+function playAudio() {
+    // Play the audio file at url
+    var my_media = new Media('http://vzier.u-host.cl/macaco.mp3',
+        // success callback
+        function () {
+            console.log("playAudio():Audio Success");
+        },
+        // error callback
+        function (err) {
+            console.log("playAudio():Audio Error: " + err);
+        }
+    );
+    // Play audio
+    my_media.play();
+}
 function revisa(){
 var u= $("#url").val();
 var p= $("#puerto").val();
+
+
 if(p==""){
 	p=80;
 }
@@ -37,11 +54,13 @@ success: function(data){
 	if(data=="online"){
 		myApp.hidePreloader();
 		console.log("ONNNNN !!");
+		navigator.vibrate(150);
 		myApp.alert("[ "+u + ":"+p+" ] Se encuentra ONLINE!", "Enhorabuena");
 	}
 	else if(data="offline"){
 		myApp.hidePreloader();
 		console.log("offfofofof !!");
+		navigator.vibrate([100, 50, 100]);
 		myApp.alert("[ "+u+":"+p+" ] No ha respondido.", "Error!");
 	
 	}
@@ -50,6 +69,7 @@ success: function(data){
 });
 }else{
 	myApp.hidePreloader();
+	navigator.vibrate([100, 50, 100]);
 	myApp.alert("Debes Ingresar una URL/IP y un puerto.", "ERROR");
 	
 };
