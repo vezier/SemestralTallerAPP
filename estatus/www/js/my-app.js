@@ -15,9 +15,23 @@ $$(document).on('deviceready', initapp);
 
 function initapp(){
   console.log("dispositivo listo!!!");
+  document.addEventListener("backbutton", onBackKeyDown, false);
   $$("#rev").on('click',revisa);
   $$("#logoc").on('click',playAudio);
   }
+  
+ function onBackKeyDown(){
+			navigator.notification.confirm("Desea salir de la APP?", cerrarAPP,"ADVERTENCIA!", "Si,No");
+ } 
+ function cerrarAPP(e){
+	 if(e==1){
+	  navigator.app.exitApp();
+	 }else{
+		 return;
+	 }
+	 
+	 
+ }
 function playAudio() {
     // Play the audio file at url
     var my_media = new Media('http://vzier.u-host.cl/macaco.mp3',
