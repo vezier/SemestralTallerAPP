@@ -18,6 +18,15 @@ function initapp(){
   document.addEventListener("backbutton", onBackKeyDown, false);
   $$("#rev").on('click',revisa);
   $$("#logoc").on('click',playAudio);
+  $$.ajax({
+			url: 'http://vzier.u-host.cl/mensajes.php',
+			method: 'GET',
+			dataType: 'html',
+			success: function(data){
+				$$('#latabla').html(data);
+				console.log(data);
+			}
+		});  
   }
   
  function onBackKeyDown(){
