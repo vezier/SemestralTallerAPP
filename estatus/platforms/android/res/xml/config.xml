@@ -52,12 +52,12 @@
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="onload" value="true" />
     </feature>
-    <name>APP ESTADO</name>
+    <name>V-State</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+		APP para ver estado de servicios web.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="support@phonegap.com" href="#">
+       V-zier
     </author>
     <content src="index.html" />
     <access origin="*" />

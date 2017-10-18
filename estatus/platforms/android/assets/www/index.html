@@ -5,29 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>DirCheck(Nompre pendiente)</title>
+    <title>DirCheck(Nombre pendiente)</title>
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
 	<link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+	<style>
+	  .demo-card-header-pic .card-header {
+		height: 40vw;
+		background-size: cover;
+		background-position: center;
+	  }
+	  .popup{
+            background: #e4e4e4;
+        }
+</style>
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Views-->
+	<div class="login-screen">
+        <div class="view">
+            <div class="page">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title">LOGIN</div>
+                        <div class="list-block">
+                         <ul>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Username</div>
+                                        <div class="item-input">
+                                            <input type="text" id="user" name="user" placeholder="Username">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Contraseña</div>
+                                        <div class="item-input">
+                                            <input type="password" id="Pass" name="pass" placeholder="Contraseña">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    <div class="list-block inset">
+                        <div class="list-block-label">
+								<p><a id="iniciar_sesion" class="item-link button">Iniciar Sesión</a></p>
+                              <p><a class="close-login-screen button">Cerrar Ventana</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="views">
       <!-- Your main view, should have "view-main" class-->
       <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <!-- We have home navbar without left link-->
-            <div class="center sliding">DirCheck</div>
-          </div>
-        </div>
-			<div class="pages navbar-fixed toolbar-fixed">
+
+			<div class="pages toolbar-fixed">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
                     <!-- Toolbar. In Material theme it should be inside of the page-->
@@ -48,52 +87,127 @@
                                 <span class="tabbar-label">Tus Datos </span>
                             </a>
                         </div>
+                    </div><!-- Scrollable page content -->
+                    <div class="page-content" style="background-image:url(img/background.png); background-size: 100% 100%;background-repeat: no-repeat;">
+							<div class="logo" id="logoc" align="center" style="margin-top:8px;margin-bottom:8px;">
+								<img src="img/logotemp.png" width="120px" height="120px"/>
+							</div>
+						<div class="checker" align="center">
+							<input type="text" id="url" placeholder="Ingresa una URL / IP">
+							<input type="tel" id="puerto" size="5" placeholder=" Puerto">
+							<p><a href="#" id="rev" style="margin-left:60px;margin:60px;margin-top:9px;" class="button button-big button-fill color-gray">Consultar</a></p>
+							</div>
+							<div class="list-block">
+								
+							</div>
+							
+							<!-- Scrollable page content END -->    
                     </div>
-
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block-title">
-						<form>
-						<div class="checker">
-                        <input type="text" id="url" placeholder="Ingresa URL">
-                        <input type="text" id="puerto" size="5" placeholder=" Puerto">
+					 <div class="picker-modal picker-1">
+						<div class="toolbar">
+						  <div class="toolbar-inner">
+							<div class="left"></div>
+							<div class="right"><a href="#" class="close-picker">Cerrar</a></div>
+						  </div>
 						</div>
-						<div class="list-block">
-						<ul><li><a id="iniciar" href="#" class="item-link list-button">Revisar </a></li></ul>
+						<div class="picker-modal-inner">
+						  <div class="page-content infinite-scroll">
+							<div class="data-table card">
+							  <table>
+								<thead>
+								  <tr>
+								    <div class="card-header">
+								    <div class="data-table-title">Historial</div>
+									</div>
+									<th class="label-cell">URL</th>
+									<th class="numeric-cell">Puerto</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td class="label-cell">Google.cl</td>
+									<td class="numeric-cell">80</td>
+								  </tr>	
+								  <tr>
+									<td class="label-cell">Google.com</td>
+									<td class="numeric-cell">80</td>
+								  </tr>
+								  <tr>
+									<td class="label-cell">Google.es</td>
+									<td class="numeric-cell">80</td>
+								  </tr>								  
+									<tr>
+									<td class="label-cell">Google.es</td>
+									<td class="numeric-cell">80</td>
+								  </tr>
+								</tbody>
+							  </table>
+							</div>
+						  </div>
 						</div>
-                    </form>
-					<div class="content-block inset">
-					<div class="content-block-inner">
-						OUTPUT 
-					</div></div>
-						
-						
-						
-						
-						
-						</div><!-- Scrollable page content END -->
-                        <div class="list-block media-list inset">
-                          
-                        </div>     
-                    </div>
-
+					  </div>
                     <div class="popup popup-tablamensajes">
-                        <div class="content-block-title">MensajesDev</div>
+							<div class="navbar">
+							  <div class="navbar-inner">
+								<!-- We have home navbar without left link-->
+								<div class="center sliding">Mensajes</div>
+							  </div>
+							</div>
+							<div class="content-block-title"></div>
+							<div class="page-content">
+							<div class="card demo-card-header-pic">
+							  <div style="background-image:url(https://78.media.tumblr.com/34ba59627f8b2b2a6b8a7e1858d9291f/tumblr_owxwuryDPB1wsbn2ao1_540.jpg)" valign="bottom" class="card-header color-white no-border">Titulo Mensaje </div>
+							  <div class="card-content">
+								<div class="card-content-inner">
+								  <p class="color-gray">Posted on January 21, 2015</p>
+								  <p>CUERPOOOO</p>
+								</div>
+							  </div>
+							  <div class="card-footer">
+								<a>Posted BY: #User</a>
+							  </div>
+							</div>						
                         <!-- Inset content block -->
                         <div class="content-block inset">
                             <div class="content-block-inner">
-                                <p>No hay mensajes.</p>
-                                <p><a href="#" class="close-popup">Cerrar</a></p>
+                                <p><a href="#" class="close-popup button button-round active">Cerrar</a></p>
                             </div>
                         </div>
+						</div>
                     </div>
 					<div class="popup popup-userInfo">
-                        <div class="content-block-title">Detalles Cuenta</div>
-                        <!-- Inset content block -->
+							<div class="CONTENEDOR INFO">
+							<div class="navbar">
+							  <div class="navbar-inner">
+								<!-- We have home navbar without left link-->
+								<div class="center sliding">Detalles de la cuenta</div>
+							  </div>
+							</div>
+								<div class="list-block">
+								  <ul>
+									<li class="item-content">
+									  <div class="item-inner">
+										<div class="item-title">UserName:</div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-inner">
+										<div class="item-title">Correo:</div>
+									  </div>
+									</li>
+									<li class="item-content">
+									  <div class="item-inner">
+										<div class="item-title">Consultas restantes:</div>
+									  </div>
+									</li>
+								  </ul>
+								</div>
+							  </div>
                         <div class="content-block inset">
                             <div class="content-block-inner">
-                                <p>No hay datos.</p>
-                                <p><a href="#" class="close-popup">Cerrar</a></p>
+								<p><a href="#"  data-picker=".picker-1" class="button button button-round open-picker">Ver Historial</a></p>
+								<p><a id="iniciar" class="open-login-screen button button-big button-round && close-popup"><i class="f7-icons" style="font-size:14px;">social_rss</i> Iniciar Sesión</a></p>
+                                <p><a href="#" class="close-popup button button-round active">Cerrar</a></p>
                             </div>
                         </div>
                     </div>
@@ -110,5 +224,6 @@
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
+	   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   </body>
 </html>
