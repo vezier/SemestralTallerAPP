@@ -30,6 +30,7 @@ function initapp(){
   }
   
  function onBackKeyDown(){
+			myApp.closeModal();
 			navigator.notification.confirm("Desea salir de la APP?", cerrarAPP,"ADVERTENCIA!", "Si,No");
  } 
  function cerrarAPP(e){
@@ -59,7 +60,7 @@ function playAudio() {
 function revisa(){
 var u= $("#url").val();
 var p= $("#puerto").val();
-
+myApp.showPreloader('Cargando');
 
 if(p==""){
 	p=80;
