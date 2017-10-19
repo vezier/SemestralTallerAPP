@@ -28,8 +28,7 @@ function initapp(){
 }
   
  function onBackKeyDown(){
-	myApp.closeModal('.popup-tablamensajes');
-	myApp.closeModal('.popup-userInfo');
+	myApp.closeModal();
 	navigator.notification.confirm("Desea salir de la APP?", cerrarAPP,"ADVERTENCIA!", ["Si","No"]);
  } 
  function cerrarAPP(e){
