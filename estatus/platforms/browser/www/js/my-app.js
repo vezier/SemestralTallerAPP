@@ -42,7 +42,7 @@ function checknet(){
   
  function onBackKeyDown(){
 	myApp.closeModal('.popup-tablamensajes');
-	myApp.closeModal('.popup-popup-userInfo');
+	myApp.closeModal('.popup-userInfo');
 	navigator.notification.confirm("Desea salir de la APP?", cerrarAPP,"ADVERTENCIA!", ["Si","No"]);
  } 
  function cerrarAPP(e){
