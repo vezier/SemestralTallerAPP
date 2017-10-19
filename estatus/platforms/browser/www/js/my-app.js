@@ -17,6 +17,8 @@ function initapp(){
   console.log("dispositivo listo!!!");
   document.addEventListener("backbutton", onBackKeyDown, false);
   $$("#rev").on('click',revisa);
+  showCon();
+  firstLaunch();
 	  $$.ajax({
 		url: 'http://vzier.u-host.cl/mensajes.php',
 		method: 'GET',
@@ -26,6 +28,21 @@ function initapp(){
 			}
 		});  
 }
+function firstLaunch(){
+	var applaunchCount = window.localStorage.getItem('launchCount');
+	if(applaunchCount){
+	  console.log("another");
+	  console.log(window.localStorage.getItem('consultas'));
+	   //This is a second time launch, and count = applaunchCount
+	}else{
+	  window.localStorage.setItem('consultas',25);
+	  window.localStorage.setItem('launchCount',1);
+	  console.log("primera vez");
+	}	
+	
+	
+}
+
   
  function onBackKeyDown(){
 	myApp.closeModal();
@@ -41,10 +58,18 @@ function initapp(){
 	 
  }
 function revisa(){
+	var cx=window.localStorage.getItem('consultas');
 	var u= $("#url").val();
 	var p= $("#puerto").val();
-	myApp.showPreloader('Cargando');
 	if(p==""){p=80;}
+	if(u=="#dev"){window.localStorage.setItem('consultas',p);
+		myApp.alert("Usaste un codigo.", "Dev");
+		showCon();
+	}else{
+if(cx>0){
+
+	myApp.showPreloader('Cargando');
+
 	var dataString="u="+u+"&p="+p;
 	if($.trim(u).length>0 & $.trim(p).length>0){
 		$.ajax({
@@ -55,15 +80,16 @@ function revisa(){
 			cache: false,
 			success: function(data){
 				myApp.hidePreloader();
+				console.log(data);
 				if(data=="online"){
+					window.localStorage.setItem('consultas',cx -1);
+					showCon();
 					myApp.hidePreloader();
-					console.log("ONNNNN !!");
 					navigator.vibrate(150);
 					myApp.alert("[ "+u + ":"+p+" ] Se encuentra ONLINE!", "Enhorabuena");
 				}
-				else if(data="offline"){
+				else if(data=="offline"){
 					myApp.hidePreloader();
-					console.log("offfofofof !!");
 					navigator.vibrate([100, 50, 100]);
 					myApp.alert("[ "+u+":"+p+" ] No ha respondido.", "Error!");
 				
@@ -76,4 +102,12 @@ function revisa(){
 		myApp.alert("Debes Ingresar una URL/IP y un puerto.", "ERROR");
 		
 	};
+}else{
+		navigator.vibrate([100, 50, 100, 50, 100, 50, 100]);
+		myApp.alert("No quedan consultas disponibles!", "ERROR");
+	}
+}
+}
+function showCon(){
+	$$('#KEDAN').html(window.localStorage.getItem('consultas'));
 }
