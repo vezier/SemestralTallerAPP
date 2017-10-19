@@ -17,8 +17,6 @@ function initapp(){
   console.log("dispositivo listo!!!");
   document.addEventListener("backbutton", onBackKeyDown, false);
   $$("#rev").on('click',revisa);
-  $$("#net").on('click',checknet);
-	if(	(checknet())==true){
 	  $$.ajax({
 		url: 'http://vzier.u-host.cl/mensajes.php',
 		method: 'GET',
@@ -27,17 +25,6 @@ function initapp(){
 			$$('#latabla').html(data);
 			}
 		});  
-	}
-}
-function checknet(){
-  var stat = window.navigator.onLine;
-  if(stat==false){
-	myApp.popup('.popup-netcheck');
-	return stat;
-  }else{ 
-	myApp.closeModal('.popup-netcheck');
-	return stat;
-  }
 }
   
  function onBackKeyDown(){
@@ -55,7 +42,6 @@ function checknet(){
 	 
  }
 function revisa(){
-if(	(checknet())==true){
 	var u= $("#url").val();
 	var p= $("#puerto").val();
 	myApp.showPreloader('Cargando');
@@ -91,5 +77,4 @@ if(	(checknet())==true){
 		myApp.alert("Debes Ingresar una URL/IP y un puerto.", "ERROR");
 		
 	};
-}
 }
