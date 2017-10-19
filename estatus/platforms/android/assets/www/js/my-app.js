@@ -32,13 +32,11 @@ function initapp(){
 function checknet(){
   var stat = window.navigator.onLine;
   if(stat==false){
-	  myApp.alert("Necesitas estar conectado a internet!", "Sin Conexion", function(){
-		myApp.popup('.popup-netcheck');
-		return false;
-	  });
+	myApp.popup('.popup-netcheck');
+	return stat;
   }else{ 
 	myApp.closeModal('.popup-netcheck');
-	return true;
+	return stat;
   }
 }
   
