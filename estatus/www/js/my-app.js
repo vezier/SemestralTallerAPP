@@ -31,13 +31,12 @@ function initapp(){
 function firstLaunch(){
 	var applaunchCount = window.localStorage.getItem('launchCount');
 	if(applaunchCount){
-	  console.log("another");
 	  console.log(window.localStorage.getItem('consultas'));
 	   //This is a second time launch, and count = applaunchCount
 	}else{
 	  window.localStorage.setItem('consultas',25);
 	  window.localStorage.setItem('launchCount',1);
-	  console.log("primera vez");
+	  showCon();
 	}	
 	
 	
