@@ -1,8 +1,8 @@
--Eliminar apartado usuario/login -> pantalla con el estado de los servicios e la u (Intranet, Adecca, moodle, etc).
+-Eliminar apartado usuario/login.
 -Colocar contadores de: Consultas exitosas, fallidas,etc.
 -Mover todo el css que esta en el index a donde corresponde.
 -Definir colores, fondo y nombre definitivo (V-state).
 -Mejorar el script de noticias.
 -Crear Logo.
--Hacer una app web para subir noticias.
+-Hacer una app web para subir noticias. +++ LISTO
 -Una alerta de que la app debe usarse con internet.
