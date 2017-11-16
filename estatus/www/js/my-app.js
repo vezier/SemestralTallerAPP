@@ -61,13 +61,6 @@ function initapp(){
  }
 function firstLaunch(){
 	var applaunchCount = window.localStorage.getItem('launchCount');
-	var adver= window.localStorage.getItem('adv');
-	if(adver!=false){
-		myApp.alert('Recuerda que debes estar conectado a internet para utilizar esta app!','',function () {
-			 myApp.confirm('Ocultar este mensaje?', '', function () {
-				window.localStorage.setItem('adv',false);
-		})});
-	}
 	if(applaunchCount){
 	   //This is a second time launch, and count = applaunchCount
 	}else{
