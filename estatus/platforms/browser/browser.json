@@ -48,6 +48,9 @@
         },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "cl.semestral.vzier"
+        },
+        "com.darktalker.cordova.screenshot": {
+            "PACKAGE_NAME": "cl.semestral.vzier"
         }
     },
     "dependent_plugins": {},
@@ -428,6 +431,14 @@
             "merges": [
                 "window.FileSystem"
             ]
+        },
+        {
+            "file": "plugins/com.darktalker.cordova.screenshot/www/Screenshot.js",
+            "id": "com.darktalker.cordova.screenshot.screenshot",
+            "pluginId": "com.darktalker.cordova.screenshot",
+            "merges": [
+                "navigator.screenshot"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -439,6 +450,7 @@
         "cordova-plugin-device-motion": "1.2.5",
         "cordova-plugin-device-orientation": "1.0.7",
         "cordova-plugin-dialogs": "1.2.1",
-        "cordova-plugin-file": "4.1.1"
+        "cordova-plugin-file": "4.1.1",
+        "com.darktalker.cordova.screenshot": "0.1.5"
     }
 }

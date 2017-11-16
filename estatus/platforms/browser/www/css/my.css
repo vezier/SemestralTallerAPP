@@ -1,0 +1,22 @@
+.demo-card-header-pic .card-header {
+	height: 45vw;
+	background-size: cover;
+	background-position: center;
+}
+.popup{
+	background: #e4e4e4;
+     }
+.page{
+	background-image:url(../img/background.png); background-size: 100% 100%;background-repeat: no-repeat;
+}
+.logo{
+	margin-top:8px;margin-bottom:8px;
+    text-align: center;
+}
+#rev{
+	margin-left:60px;margin:60px;margin-top:9px;
+}
+#inof{
+	margin-left:10px;
+	margin-right:10px;
+}

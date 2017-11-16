@@ -33,6 +33,9 @@
         },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "cl.semestral.vzier"
+        },
+        "com.darktalker.cordova.screenshot": {
+            "PACKAGE_NAME": "cl.semestral.vzier"
         }
     },
     "dependent_plugins": {}

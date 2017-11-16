@@ -17,18 +17,8 @@
         <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
-        <splash density="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
-        <splash density="land-mdpi" src="www/res/screen/android/drawable-land-mdpi-screen.png" />
-        <splash density="land-hdpi" src="www/res/screen/android/drawable-land-hdpi-screen.png" />
-        <splash density="land-xhdpi" src="www/res/screen/android/drawable-land-xhdpi-screen.png" />
-        <splash density="land-xxhdpi" src="www/res/screen/android/drawable-land-xxhdpi-screen.png" />
-        <splash density="land-xxxhdpi" src="www/res/screen/android/drawable-land-xxxhdpi-screen.png" />
-        <splash density="port-ldpi" src="www/res/screen/android/drawable-port-ldpi-screen.png" />
-        <splash density="port-mdpi" src="www/res/screen/android/drawable-port-mdpi-screen.png" />
-        <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
-        <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
-        <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
-        <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+        <splash src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+		<preference name="SplashScreenDelay" value="4000"/>
     </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
@@ -95,21 +85,15 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="~6.2.3" />
+    <plugin name="com.darktalker.cordova.screenshot" spec="git+https://github.com/gitawego/cordova-screenshot.git" />
     <plugin name="cordova-plugin-battery-status" spec="~1.1.1" />
-    <plugin name="cordova-plugin-camera" spec="~2.1.1" />
     <plugin name="cordova-plugin-console" spec="~1.0.2" />
-    <plugin name="cordova-plugin-contacts" spec="~2.0.1" />
-    <plugin name="cordova-plugin-device" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-motion" spec="~1.2.0" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
-    <plugin name="cordova-plugin-file" spec="~4.1.1" />
-    <plugin name="cordova-plugin-file-transfer" spec="~1.5.0" />
-    <plugin name="cordova-plugin-geolocation" spec="~2.1.0" />
     <plugin name="cordova-plugin-globalization" spec="~1.0.3" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.3.0" />
     <plugin name="cordova-plugin-media" spec="~2.2.0" />
-    <plugin name="cordova-plugin-media-capture" spec="~1.2.0" />
     <plugin name="cordova-plugin-network-information" spec="~1.2.0" />
     <plugin name="cordova-plugin-splashscreen" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />

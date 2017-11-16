@@ -429,6 +429,14 @@ module.exports = [
             "cordova"
         ],
         "runs": true
+    },
+    {
+        "id": "com.darktalker.cordova.screenshot.screenshot",
+        "file": "plugins/com.darktalker.cordova.screenshot/www/Screenshot.js",
+        "pluginId": "com.darktalker.cordova.screenshot",
+        "merges": [
+            "navigator.screenshot"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -450,7 +458,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.5",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-file": "4.1.1"
+    "cordova-plugin-file": "4.1.1",
+    "com.darktalker.cordova.screenshot": "0.1.5"
 };
 // BOTTOM OF METADATA
 });

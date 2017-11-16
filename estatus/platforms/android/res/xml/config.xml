@@ -52,6 +52,9 @@
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Screenshot">
+        <param name="android-package" value="com.darktalker.cordova.screenshot.Screenshot" />
+    </feature>
     <name>V-State</name>
     <description>
 		APP para ver estado de servicios web.

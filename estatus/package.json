@@ -26,10 +26,12 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-vibration": {},
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "com.darktalker.cordova.screenshot": {}
         }
     },
     "dependencies": {
+        "com.darktalker.cordova.screenshot": "git+https://github.com/gitawego/cordova-screenshot.git",
         "cordova-android": "~6.2.3",
         "cordova-plugin-battery-status": "~1.1.1",
         "cordova-plugin-camera": "~2.1.1",
